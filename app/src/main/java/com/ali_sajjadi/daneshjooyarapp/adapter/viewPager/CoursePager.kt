@@ -25,7 +25,7 @@ class CoursePager(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                val videosFragment = VideosFragment(context)
+                val videosFragment = VideosFragment()
                 videosFragment.arguments = Bundle().apply {
                     putParcelableArrayList("videoList", videoList)
                 }
@@ -40,7 +40,7 @@ class CoursePager(
                 infoFragment
             }
 
-            else -> VideosFragment(context)
+            else -> VideosFragment()
         }
 
     }

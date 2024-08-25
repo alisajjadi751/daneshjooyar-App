@@ -1,8 +1,11 @@
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ali_sajjadi.daneshjooyarapp.R
+import com.ali_sajjadi.daneshjooyarapp.adapter.recycler.RecyclerDiffUtils
+
 import com.ali_sajjadi.daneshjooyarapp.databinding.TitleRecyclerBinding
 import com.ali_sajjadi.daneshjooyarapp.adapter.recycler.data.DataTitle
 
@@ -42,17 +45,15 @@ class TitleRecyclerAdapter(
 
             // تنظیم listener برای آیتم
             itemView.setOnClickListener {
-                // بررسی این که موقعیت معتبر است
-                val previousPosition = selectedPosition
-                selectedPosition = adapterPosition
+                    val previousPosition = selectedPosition
+                    selectedPosition = adapterPosition
 
-                // Set the click listener for the item
+                    itemClickListener(data)
 
-                itemClickListener(data)
+                    // استفاده از dataUpdate برای به‌روزرسانی لیست داده‌ها
+                    notifyItemChanged(previousPosition)
+                    notifyItemChanged(selectedPosition)
 
-
-                notifyItemChanged(previousPosition)
-                notifyItemChanged(selectedPosition)
             }
 
         }
@@ -64,5 +65,16 @@ class TitleRecyclerAdapter(
         selectedPosition = position
         notifyItemChanged(previousPosition)
         notifyItemChanged(selectedPosition)
+    }
+
+
+    fun dataUpdate(newList:ArrayList<DataTitle>) {
+        val diffCallback = RecyclerDiffUtils(dataTitle,newList)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+
+        dataTitle.clear()
+        dataTitle.addAll(newList)
+
+        diffResult.dispatchUpdatesTo(this)
     }
 }

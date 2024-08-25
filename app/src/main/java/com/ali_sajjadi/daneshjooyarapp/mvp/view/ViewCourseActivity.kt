@@ -3,9 +3,9 @@ package com.ali_sajjadi.daneshjooyarapp.mvp.view
 import DataDemoVideo
 import DataInfo
 import DataListVideo
-import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.MediaController
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
@@ -32,8 +32,7 @@ class ViewCourseActivity(
     }
 
 
-    private val demoVideo =
-        (context as Activity).intent.getParcelableExtra<DataDemoVideo>("demoVideo")
+
 
     fun setupTabLayout(videoList:ArrayList<DataListVideo>?,infoList:ArrayList<DataInfo>?) {
         val tableTitle = arrayOf("ویدیو ها", "اطلاعات")
@@ -46,16 +45,25 @@ class ViewCourseActivity(
         }.attach()
     }
 
-    fun initVideoView() {
+    fun initVideoView(demoVideo: DataDemoVideo?) {
         val videoUri = demoVideo?.demoVideo
         val controller = MediaController(context)
         controller.setAnchorView(binding.videoView)
+
+
+
+           binding. playButton2?.setOnClickListener {
+                binding.videoView.start()
+               binding. playButton2.visibility = View.GONE // مخفی کردن آیکون پخش
+            }
+
 
         try {
             binding.videoView.setMediaController(controller)
             binding.videoView.setVideoURI(videoUri)
             binding.videoView.requestFocus()
-            binding.videoView.start()
+
+
         } catch (e: Exception) {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
@@ -65,6 +73,12 @@ class ViewCourseActivity(
                 controller.setAnchorView(binding.videoView)
             }
         }
+
+        binding.videoView.setOnCompletionListener {
+            binding.playButton2?.visibility = View.VISIBLE // نمایش دوباره آیکون پخش پس از پایان ویدیو
+        }
+
+
     }
 
     fun getVideoCurrentPosition(): Int {

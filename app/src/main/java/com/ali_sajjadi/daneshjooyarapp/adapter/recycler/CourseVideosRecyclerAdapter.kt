@@ -1,21 +1,14 @@
 package com.ali_sajjadi.daneshjooyarapp.adapter.recycler
 
-import DataCourseVideo
-import DataHome
 import DataListVideo
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.ali_sajjadi.daneshjooyarapp.R
 import com.ali_sajjadi.daneshjooyarapp.databinding.ListItemVideoBinding
 import com.ali_sajjadi.daneshjooyarapp.ui.activity.VideoCourseActivity
-import com.ali_sajjadi.daneshjooyarapp.ui.fragment.VideoCourseFragment
 
 class CourseVideosRecyclerAdapter(
     private val context: Context,

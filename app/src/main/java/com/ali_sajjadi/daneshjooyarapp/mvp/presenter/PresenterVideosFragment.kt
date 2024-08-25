@@ -1,4 +1,3 @@
-/*
 package com.ali_sajjadi.daneshjooyarapp.mvp.presenter
 
 import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelVideosFragment
@@ -11,8 +10,7 @@ class PresenterVideosFragment(
 ) : BaseLifeCycle {
 
     override fun onCreate() {
-view.setCourseRecycler()
+        view.setCourseRecycler(model.dataList())
     }
 
 }
-*/

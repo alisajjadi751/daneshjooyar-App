@@ -4,7 +4,6 @@ import DataCourseVideo
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.Toast
 import com.ali_sajjadi.daneshjooyarapp.databinding.ActivityVideoCourseBinding

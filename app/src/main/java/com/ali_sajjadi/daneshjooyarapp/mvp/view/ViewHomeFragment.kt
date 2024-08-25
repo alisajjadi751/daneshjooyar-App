@@ -262,16 +262,12 @@ class ViewHomeFragment(
                 bundle.putParcelableArrayList("dataList", ArrayList(dataPython))
             }
         }
-        val coursesFragment =
-            ListCoursesFragment.newInstance(dataList = ArrayList(dataMobile)).apply {
-                arguments = bundle
-            }
 
 
         // جابجایی به فرگمنت CoursesFragment
         val fragmentManager = (context as AppCompatActivity).supportFragmentManager
         fragmentManager.beginTransaction()
-            .replace(R.id.frameLayout, coursesFragment)
+            .replace(R.id.frameLayout, ListCoursesFragment().apply { arguments = bundle })
 
             .commit()
     }

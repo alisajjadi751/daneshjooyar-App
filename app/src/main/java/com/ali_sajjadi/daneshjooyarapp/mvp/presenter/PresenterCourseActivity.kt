@@ -12,7 +12,8 @@ class PresenterCourseActivity(
     override fun onCreate() {
 
         view.setupTabLayout(model.dataVideoList(),model.dataInfoList())
-        view.initVideoView()
+        view.initVideoView(model.demoVideo())
+
 
     }
 }

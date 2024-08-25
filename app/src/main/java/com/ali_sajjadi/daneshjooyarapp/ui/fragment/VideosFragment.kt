@@ -11,11 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ali_sajjadi.daneshjooyarapp.adapter.recycler.CourseVideosRecyclerAdapter
 import com.ali_sajjadi.daneshjooyarapp.databinding.FragmentVideosBinding
+import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelVideosFragment
+import com.ali_sajjadi.daneshjooyarapp.mvp.presenter.PresenterVideosFragment
+import com.ali_sajjadi.daneshjooyarapp.mvp.view.ViewVideosFragment
 
 
-class VideosFragment(
-    private val context: Context
-) : Fragment() {
+class VideosFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,24 +24,11 @@ class VideosFragment(
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentVideosBinding.inflate(LayoutInflater.from(context))
-        val dataList: ArrayList<DataListVideo>? = arguments?.getParcelableArrayList("videoList")
-
-
-            binding.recyclerVideos.layoutManager =
-                LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-            binding.recyclerVideos.adapter = CourseVideosRecyclerAdapter(context, dataList!!)
-
-
-
-
-        return binding.root
-
-        /*val view = ViewVideosFragment(context)
-        val model = ModelVideosFragment(context)
+        val view = ViewVideosFragment(requireContext())
+        val model = ModelVideosFragment(this)
         val presenter = PresenterVideosFragment(view,model)
         presenter.onCreate()
-        return view.binding.root*/
+        return view.binding.root
     }
 
 }
