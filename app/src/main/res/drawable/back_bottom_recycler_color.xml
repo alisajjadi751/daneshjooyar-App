@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- حالت دکمه فشرده شده -->
+    <item android:state_pressed="true" android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#000080"
+                android:endColor="#3785CD"
+                android:angle="0"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- حالت دکمه فعال -->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#000080"
+                android:endColor="#3785CD"
+                android:angle="0"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- حالت دکمه غیرفعال -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+</selector>

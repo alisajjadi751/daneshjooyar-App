@@ -1,0 +1,26 @@
+<!-- res/drawable/gradient_button_with_stroke.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- لایه استروک -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#000080"
+                android:endColor="#3785CD"
+                android:type="linear" />
+            <corners android:radius="6dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- لایه داخلی برای پر کردن -->
+    <item android:left="2dp" android:right="2dp" android:top="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+
+</layer-list>
