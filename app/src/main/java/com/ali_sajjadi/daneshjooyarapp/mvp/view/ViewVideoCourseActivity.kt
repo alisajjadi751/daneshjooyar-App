@@ -14,34 +14,35 @@ class ViewVideoCourseActivity(
 
     val binding = ActivityVideoCourseBinding.inflate(LayoutInflater.from(mContext))
 
-    fun initTitle(title: String?) {
 
+
+    fun initTitle(title: String?) {
         binding.txtTitleVideo.text = title
     }
 
     fun initVideoView(courseVideo: DataCourseVideo?) {
-        val videoUri = courseVideo?.courseVideo
+        val videoUri = courseVideo?.courseVideo ?: return
         val controller = MediaController(mContext)
         controller.setAnchorView(binding.courseVideo)
 
-        binding.playButton.let { playButton ->
-            playButton.setOnClickListener {
-                binding.courseVideo.start()
-                playButton.visibility = View.GONE // مخفی کردن آیکون پخش
-            }
+        binding.playButton.setOnClickListener {
+            binding.courseVideo.start()
+            binding.playButton.visibility = View.GONE // مخفی کردن آیکون پخش
         }
 
         try {
             binding.courseVideo.setMediaController(controller)
             binding.courseVideo.setVideoURI(videoUri)
             binding.courseVideo.requestFocus()
-
         } catch (e: Exception) {
-            Toast.makeText(mContext, e.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, "خطا در بارگذاری ویدیو: ${e.message}", Toast.LENGTH_SHORT).show()
         }
 
-        binding.courseVideo.setOnPreparedListener {
-            it.setOnVideoSizeChangedListener { _, _, _ ->
+        binding.courseVideo.setOnPreparedListener { mediaPlayer ->
+            val videoDuration = mediaPlayer.duration
+            binding.progressBar.max = videoDuration // تنظیم حداکثر مقدار ProgressBar
+
+            mediaPlayer.setOnVideoSizeChangedListener { _, _, _ ->
                 controller.setAnchorView(binding.courseVideo)
             }
         }
@@ -50,5 +51,7 @@ class ViewVideoCourseActivity(
             binding.playButton.visibility = View.VISIBLE // نمایش دوباره آیکون پخش پس از پایان ویدیو
         }
 
+
     }
+
 }

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.DaneshjooyarApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.MainActivity"
+            android:configChanges="orientation|screenSize"
+
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.VideoCourseActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
@@ -21,8 +26,7 @@
             android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.MainActivity"
-            android:configChanges="orientation|screenSize"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

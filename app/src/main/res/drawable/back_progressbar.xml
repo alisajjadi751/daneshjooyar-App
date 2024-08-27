@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- پس‌زمینه نوار -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="10dp" />
+            <solid android:color="#000080" />
+        </shape>
+    </item>
+
+    <!-- تصویر موشک به عنوان نوار پیشرفت -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <bitmap
+                android:src="@drawable/ic_rocket"
+            android:tileMode="repeat"
+            android:gravity="left" />
+        </clip>
+    </item>
+</layer-list>

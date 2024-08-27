@@ -1,11 +1,12 @@
 package com.ali_sajjadi.daneshjooyarapp.ui.activity
 
 
+import com.ali_sajjadi.daneshjooyarapp.mvp.view.ViewVideoCourseActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelVideoCourseActivity
 import com.ali_sajjadi.daneshjooyarapp.mvp.presenter.PresenterVideoCourseActivity
-import com.ali_sajjadi.daneshjooyarapp.mvp.view.ViewVideoCourseActivity
+
 
 class VideoCourseActivity : AppCompatActivity() {
     private lateinit var view: ViewVideoCourseActivity
@@ -16,6 +17,7 @@ class VideoCourseActivity : AppCompatActivity() {
         view = ViewVideoCourseActivity(this)
         model = ModelVideoCourseActivity(this)
         setContentView(view.binding.root)
+
 
         presenter = PresenterVideoCourseActivity(view, model)
         presenter.onCreate()

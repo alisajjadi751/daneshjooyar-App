@@ -1,8 +1,9 @@
 package com.ali_sajjadi.daneshjooyarapp.mvp.presenter
 
 
-import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelVideoCourseActivity
 import com.ali_sajjadi.daneshjooyarapp.mvp.view.ViewVideoCourseActivity
+import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelVideoCourseActivity
+
 import info.alirezaahmadi.frenchpastry.mvp.ext.BaseLifeCycle
 
 class PresenterVideoCourseActivity(
