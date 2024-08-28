@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.ali_sajjadi.daneshjooyarapp.R
 import com.ali_sajjadi.daneshjooyarapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +19,10 @@ class SplashActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         },3000)
+    }
 
-
+    override fun onDestroy() {
+        finish()
+        super.onDestroy()
     }
 }
