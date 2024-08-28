@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo:
     ```sh
-    git clone https://github.com/alisajjadi751/daneshjooyar-App
+    git clone https://github.com/alisajjadi751/daneshjooyar-App.git
     ```
 
 2. Open the project in Android Studio:
