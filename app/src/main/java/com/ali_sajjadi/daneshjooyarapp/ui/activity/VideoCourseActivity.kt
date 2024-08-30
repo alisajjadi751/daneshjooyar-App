@@ -22,5 +22,10 @@ class VideoCourseActivity : AppCompatActivity() {
         presenter = PresenterVideoCourseActivity(view, model)
         presenter.onCreate()
 
+
+
+
     }
+
+
 }

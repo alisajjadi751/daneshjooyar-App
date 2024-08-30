@@ -1,28 +1,47 @@
 package com.ali_sajjadi.daneshjooyarapp.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.ali_sajjadi.daneshjooyarapp.databinding.ActivitySplashBinding
+import com.ali_sajjadi.daneshjooyarapp.mvp.ext.ActivityUtils
+import com.ali_sajjadi.daneshjooyarapp.mvp.model.ModelSplashActivity
+import com.ali_sajjadi.daneshjooyarapp.mvp.presenter.PresenterSplashActivity
+import com.ali_sajjadi.daneshjooyarapp.mvp.view.ViewSplashActivity
 
-class SplashActivity : AppCompatActivity() {
-    private lateinit var binding:ActivitySplashBinding
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : AppCompatActivity(),ActivityUtils {
+    private lateinit var view: ViewSplashActivity
+    private lateinit var presenter: PresenterSplashActivity
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivitySplashBinding.inflate(layoutInflater)
+        view = ViewSplashActivity(this,this)
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(view.binding.root)
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        presenter = PresenterSplashActivity(view, ModelSplashActivity())
+        presenter.onCreate()
+
+
+
+        /*Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
-        },3000)
+        },3000)*/
     }
 
-    override fun onDestroy() {
+    override fun finished() {
+        finish()
+    }
+
+   /* override fun onDestroy() {
         finish()
         super.onDestroy()
-    }
+    }*/
 }

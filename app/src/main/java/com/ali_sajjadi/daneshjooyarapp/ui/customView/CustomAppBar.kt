@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.ali_sajjadi.daneshjooyarapp.R
 import com.ali_sajjadi.daneshjooyarapp.databinding.CustomAppBarBinding
 
@@ -15,8 +16,14 @@ class CustomAppBar(
 
     private val binding = CustomAppBarBinding.inflate(LayoutInflater.from(context))
 
+
     init {
         addView(binding.root)
+        binding.icTicket.setOnClickListener {
+
+        }
     }
+
+
 
 }
