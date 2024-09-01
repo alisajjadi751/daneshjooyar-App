@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat.startActivity
 import com.ali_sajjadi.daneshjooyarapp.databinding.ActivitySplashBinding
 import com.ali_sajjadi.daneshjooyarapp.databinding.BottomSheetDialogBinding
 import com.ali_sajjadi.daneshjooyarapp.mvp.ext.ActivityUtils
+import com.ali_sajjadi.daneshjooyarapp.ui.activity.LoginActivity
 import com.ali_sajjadi.daneshjooyarapp.ui.activity.MainActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -79,7 +80,7 @@ class ViewSplashActivity(
 
     private fun handler(){
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(mContext, MainActivity::class.java)
+            val intent = Intent(mContext, LoginActivity::class.java)
             mContext.startActivity(intent)
             activityUtils.finished()
         }, 3000)

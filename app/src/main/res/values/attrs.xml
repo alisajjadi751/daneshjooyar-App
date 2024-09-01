@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="CustomItemAbout">
+    <declare-styleable name="CustomEditText">
+        <attr name="type" format="integer"/>
+        <attr name="rtlSupport" format="boolean" />
+        <attr name="max" format="integer"/>
+        <attr name="hint" format="string"/>
 
+
+    </declare-styleable>
+    <declare-styleable name="CustomItemAbout">
         <attr name="text" format="string"/>
         <attr name="text2" format="string"/>
         <attr name="srcCompat" format="reference"/>
-
 
     </declare-styleable>
 

@@ -268,7 +268,6 @@ class ViewHomeFragment(
         val fragmentManager = (context as AppCompatActivity).supportFragmentManager
         fragmentManager.beginTransaction()
             .replace(R.id.frameLayout, ListCoursesFragment().apply { arguments = bundle })
-
             .commit()
     }
 
