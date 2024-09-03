@@ -15,6 +15,8 @@ class PresenterLoginFragment(
 
        // view.errorNumber()
         view.login()
+        view.ghavanin()
+
 
 
     }
