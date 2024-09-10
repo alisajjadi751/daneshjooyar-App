@@ -27,21 +27,11 @@ class SplashActivity : AppCompatActivity(),ActivityUtils {
         presenter = PresenterSplashActivity(view, ModelSplashActivity())
         presenter.onCreate()
 
-
-
-        /*Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        },3000)*/
     }
 
     override fun finished() {
         finish()
     }
 
-   /* override fun onDestroy() {
-        finish()
-        super.onDestroy()
-    }*/
+
 }

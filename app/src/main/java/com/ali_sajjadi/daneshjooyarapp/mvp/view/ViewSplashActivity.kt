@@ -1,6 +1,5 @@
 package com.ali_sajjadi.daneshjooyarapp.mvp.view
 
-import android.app.Activity
 import android.content.Context
 import android.content.Context.CONNECTIVITY_SERVICE
 import android.content.Intent
@@ -10,13 +9,10 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.view.LayoutInflater
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import com.ali_sajjadi.daneshjooyarapp.databinding.ActivitySplashBinding
 import com.ali_sajjadi.daneshjooyarapp.databinding.BottomSheetDialogBinding
 import com.ali_sajjadi.daneshjooyarapp.mvp.ext.ActivityUtils
 import com.ali_sajjadi.daneshjooyarapp.ui.activity.LoginActivity
-import com.ali_sajjadi.daneshjooyarapp.ui.activity.MainActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ViewSplashActivity(

@@ -14,12 +14,18 @@ class LoginActivity : AppCompatActivity(),ActivityUtils {
         setContentView(R.layout.activity_login)
         supportFragmentManager.beginTransaction()
             .replace(R.id.login_frameLayout,LoginFragment() )
-            .addToBackStack(null)
             .commit()
     }
 
     override fun finished() {
         finish()
+    }
+
+    override fun setFragment(fragment: Fragment) {
+        setContentView(R.layout.activity_login)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.login_frameLayout,fragment )
+            .commit()
     }
 
 }

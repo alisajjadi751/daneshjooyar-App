@@ -1,6 +1,7 @@
 package com.ali_sajjadi.daneshjooyarapp.mvp.view
 
 import android.content.Context
+import android.os.Bundle
 import android.text.Editable
 import android.text.Spannable
 import android.text.SpannableString
@@ -12,6 +13,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.ali_sajjadi.daneshjooyarapp.R
 import com.ali_sajjadi.daneshjooyarapp.databinding.FragmentLoginBinding
 import com.ali_sajjadi.daneshjooyarapp.mvp.ext.ActivityUtils
@@ -19,7 +21,7 @@ import com.ali_sajjadi.daneshjooyarapp.ui.fragment.RulesFragment
 
 class ViewLoginFragment(
     private val mContext: Context,
-    private val activityUtils:ActivityUtils
+    private val activityUtils: ActivityUtils
 ) {
 
 
@@ -53,6 +55,7 @@ class ViewLoginFragment(
                     binding.btnSendCode.setBackgroundResource(R.drawable.back_button_de_active)
                     binding.btnSendCode.isEnabled = false
                 }
+
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -85,8 +88,8 @@ class ViewLoginFragment(
             val clickableSpan = object : ClickableSpan() {
                 override fun onClick(widget: View) {
                     // کاری که هنگام کلیک باید انجام شود
-                   seenRules()
-                    Log.i("TEST","ed")
+                    seenRules()
+                    Log.i("TEST", "ed")
                 }
             }
 
@@ -106,7 +109,23 @@ class ViewLoginFragment(
     fun seenRules() {
 
         activityUtils.setFragment(RulesFragment())
-
     }
+
+    fun sendCode(fragment: Fragment) {
+        binding.btnSendCode.setOnClickListener {
+
+            val bundle = Bundle()
+            val mobile = binding.txtEditMobil.text
+
+            bundle.putString("NUMBER", mobile.toString())
+
+            // انتقال داده‌ها به Fragment جدید
+            fragment.arguments = bundle
+
+            // نمایش Fragment جدید
+            activityUtils.setFragment(fragment)
+        }
+    }
+
 
 }
