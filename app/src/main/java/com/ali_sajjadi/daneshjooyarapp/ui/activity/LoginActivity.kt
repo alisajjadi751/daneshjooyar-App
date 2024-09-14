@@ -28,4 +28,8 @@ class LoginActivity : AppCompatActivity(),ActivityUtils {
             .commit()
     }
 
+   /* override fun finishedAffinity(fragment: Fragment) {
+
+        finishAffinity()
+    }*/
 }

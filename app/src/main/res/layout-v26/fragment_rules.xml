@@ -36,7 +36,7 @@
         android:text="قوانین و مقررات دانشجویار"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/sans_fa_name_bold"
         app:layout_constraintBottom_toBottomOf="@+id/ic_back"
         app:layout_constraintEnd_toStartOf="@+id/ic_back"
         app:layout_constraintTop_toTopOf="@+id/ic_back" />
@@ -70,6 +70,7 @@
             android:text="@string/txt_rules"
             android:textSize="16sp"
             android:textColor="@color/black"
+            android:fontFamily="@font/sans_fa_name_regular"
             android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

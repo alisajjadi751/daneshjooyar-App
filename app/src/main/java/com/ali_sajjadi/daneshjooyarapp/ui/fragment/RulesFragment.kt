@@ -25,7 +25,7 @@ class RulesFragment:Fragment(),ActivityUtils
         return view.binding.root
     }
 
-    override fun finished() {
+    override fun back() {
        requireActivity().supportFragmentManager.popBackStack()
     }
 

@@ -15,7 +15,7 @@ class ViewRulesFragment(
 
     fun back(){
         binding.icBack.setOnClickListener {
-            activityUtils.finished()
+            activityUtils.back()
 
         }
     }

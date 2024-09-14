@@ -33,8 +33,9 @@ class LoginFragment:Fragment(),ActivityUtils {
     }
 
 
-    override fun finished() {
+    override fun back() {
       requireActivity().supportFragmentManager.popBackStack()
     }
+
 
 }

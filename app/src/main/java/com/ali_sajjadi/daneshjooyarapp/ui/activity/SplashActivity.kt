@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity(),ActivityUtils {
         super.onCreate(savedInstanceState)
         setContentView(view.binding.root)
 
-        presenter = PresenterSplashActivity(view, ModelSplashActivity())
+        presenter = PresenterSplashActivity(view, ModelSplashActivity(this))
         presenter.onCreate()
 
     }

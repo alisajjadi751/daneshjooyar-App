@@ -23,10 +23,12 @@ interface ActivityUtils {
 
     fun finished() {}
 
-    fun finishedAffinity() {}
+    fun finishedAffinity(fragment: Fragment) {}
 
     fun showSnackBar() {}
 
     fun activeNetwork() {}
+
+    fun back(){}
 
 }

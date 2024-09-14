@@ -15,6 +15,7 @@ class PresenterLoginFragment(
     override fun onCreate() {
 
        // view.errorNumber()
+        view.checkLoginStatus()
         view.login()
         view.ghavanin()
         view.sendCode(LoginPassFragment())

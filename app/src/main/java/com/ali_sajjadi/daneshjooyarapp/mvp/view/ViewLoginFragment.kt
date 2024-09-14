@@ -1,6 +1,9 @@
 package com.ali_sajjadi.daneshjooyarapp.mvp.view
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.Spannable
@@ -17,6 +20,7 @@ import androidx.fragment.app.Fragment
 import com.ali_sajjadi.daneshjooyarapp.R
 import com.ali_sajjadi.daneshjooyarapp.databinding.FragmentLoginBinding
 import com.ali_sajjadi.daneshjooyarapp.mvp.ext.ActivityUtils
+import com.ali_sajjadi.daneshjooyarapp.ui.activity.MainActivity
 import com.ali_sajjadi.daneshjooyarapp.ui.fragment.RulesFragment
 
 class ViewLoginFragment(
@@ -26,6 +30,23 @@ class ViewLoginFragment(
 
 
     val binding = FragmentLoginBinding.inflate(LayoutInflater.from(mContext))
+    private val sharedPreferences: SharedPreferences = mContext.getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
+
+
+    fun checkLoginStatus() {
+        // بررسی اینکه آیا کاربر قبلاً وارد شده است یا خیر
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (isLoggedIn) {
+            // کاربر قبلاً وارد شده است، مستقیماً به صفحه اصلی یا بخش دیگر بروید
+            val intent = Intent(mContext, MainActivity::class.java)
+            mContext.startActivity(intent) // یا هر فرگمنتی که می‌خواهید
+        } else {
+            // نمایش صفحه ورود
+            login()
+        }
+    }
+
 
     fun login() {
         binding.txtEditMobil.addTextChangedListener(object : TextWatcher {

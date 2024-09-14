@@ -41,7 +41,7 @@ class CustomItemAbout(
     private fun applyGradientToText() {
         val startColor = ContextCompat.getColor(context, R.color.blue)
         val endColor = ContextCompat.getColor(context, R.color.blue2)
-        val textPaint = binding.txtTitle12.paint
+        val textPaint = binding.txtTitle11.paint
 
         // اطمینان از اینکه رنگ تیره در ابتدا قرار دارد
         val colors = intArrayOf(startColor, endColor)

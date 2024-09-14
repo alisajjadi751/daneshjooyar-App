@@ -11,5 +11,6 @@ class PresenterLoginPassFragment(
     override fun onCreate() {
         view.getNumber()
         view.editNumber()
+        view.interPass()
     }
 }
